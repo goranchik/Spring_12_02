@@ -3,7 +3,12 @@ package com.study.lab1.dao;
 import com.study.lab1.model.User;
 
 public class UserDao {
-    private MockDataSource dataSource = new MockDataSource();
+
+    private MockDataSource dataSource;// = new MockDataSource();
+
+    public void setDataSource(MockDataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     public User getUser(long id) {
         long start = System.currentTimeMillis();

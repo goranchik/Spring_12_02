@@ -5,13 +5,19 @@ import com.study.lab1.model.Account;
 import com.study.lab1.model.Request;
 import com.study.lab1.service.AccountService;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:application-context.xml")
 public class FlowTest {
     @Test
     public void testSuccessWidthdrawRequest() {
+
         RequestHandler requestHandler = new RequestHandler();
         AccountService accountService = requestHandler.getAccountService();
 
@@ -78,6 +84,6 @@ public class FlowTest {
         double allMoneyAfter = accountFromAfterRequest.getBalance() + accountToAfterRequest.getBalance();
 
         assertEquals(allMoneyBefore, allMoneyAfter, 0.1);
-        assertEquals(accountFromAfterRequest.getBalance(),  accountToAfterRequest.getBalance(), 0.1);
+        assertEquals(accountFromAfterRequest.getBalance(), accountToAfterRequest.getBalance(), 0.1);
     }
 }

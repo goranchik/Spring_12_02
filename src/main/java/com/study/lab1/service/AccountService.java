@@ -3,11 +3,17 @@ package com.study.lab1.service;
 import com.study.lab1.dao.AccountDao;
 import com.study.lab1.model.Account;
 import com.study.lab1.model.Operation;
+import com.sun.xml.internal.ws.developer.Serialization;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
+@Service
 public class AccountService {
-    private AccountDao accountDao = new AccountDao();
+
+    @Autowired
+    private AccountDao accountDao;// = new AccountDao();
 
     public Account getAccount(long id) {
         return accountDao.get(id);
