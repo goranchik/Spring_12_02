@@ -23,7 +23,13 @@ public class MockDataSource {
     }
 
     public void updateAccount(Account account) {
-        Account accountToUpdate = accounts.stream().filter(i -> i.getId() == account.getId()).findAny().orElse(null);
+        Account accountToUpdate = null;//
+        for (Account account1 : accounts) {
+            if (account1.getId() == account.getId()){
+                accountToUpdate = account1;
+            }
+        }
+        // = accounts.stream().filter(i -> i.getId() == account.getId()).findAny().orElse(null);
         if (accountToUpdate != null) {
             accountToUpdate.setBalance(account.getBalance());
         }
@@ -36,8 +42,14 @@ public class MockDataSource {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        Account account = accounts.stream().filter(i -> i.getId() == id).findAny().orElse(null);
-        return copy(account);
+        for (Account account : accounts) {
+            if (account.getId() == id){
+                return copy(account);
+            }
+        }
+        //Account account = accounts.stream().filter(i -> i.getId() == id).findAny().orElse(null);
+        //return copy(account);
+        return null;
     }
 
     public User getUser(long id) {

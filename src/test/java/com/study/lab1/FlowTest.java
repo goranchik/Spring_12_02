@@ -6,6 +6,7 @@ import com.study.lab1.model.Request;
 import com.study.lab1.service.AccountService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -15,10 +16,13 @@ import static org.junit.Assert.assertFalse;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:application-context.xml")
 public class FlowTest {
+
+    @Autowired
+    RequestHandler requestHandler;
+
     @Test
     public void testSuccessWidthdrawRequest() {
 
-        RequestHandler requestHandler = new RequestHandler();
         AccountService accountService = requestHandler.getAccountService();
 
         // prepare

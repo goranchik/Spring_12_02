@@ -4,16 +4,16 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="account" class="com.study.lab1.dao.AccountDao">
+    <bean id="accountDao" class="com.study.lab1.dao.AccountDao">
         <property name="dataSource" ref="mockDataSource"/>
     </bean>
 
     <bean id="mockDataSource" class="com.study.lab1.dao.MockDataSource"/>
 
-    <bean id="user" class="com.study.lab1.dao.UserDao">
+    <bean id="userDao" class="com.study.lab1.dao.UserDao">
         <property name="dataSource" ref="mockDataSource"/>
     </bean>
 
     <context:annotation-config/>
-    <context:component-scan base-package="com.study.lab1.service"/>
+    <context:component-scan base-package="com.study.lab1.service,com.study.lab1.handler"/>
 </beans>
