@@ -1,4 +1,6 @@
-<h2>+![alt tag](https://github.com/Rooman/Spring_12_02/blob/master/springDiagram.png)</h2>
+#Spring_12_02
+
+![alt tag](https://github.com/Rooman/Spring_12_02/blob/master/springDiagram.png)
 
 <h3>Задача: перевести все приложение на спринг.</h3>
 <ol>
