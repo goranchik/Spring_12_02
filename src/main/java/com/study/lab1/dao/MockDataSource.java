@@ -90,4 +90,12 @@ public class MockDataSource {
     private int generateTimeout(){
         return (int) (1000 * Math.random());
     }
+
+    public List<Account> getAccounts() {
+        return accounts;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
 }
