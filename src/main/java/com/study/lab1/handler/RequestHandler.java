@@ -7,9 +7,10 @@ import com.study.lab1.service.AccountService;
 import com.study.lab1.service.RequestValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
+@Component
 public class RequestHandler {
 
     @Autowired

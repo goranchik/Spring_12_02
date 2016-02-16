@@ -3,9 +3,10 @@ package com.study.lab1.dao;
 import com.study.lab1.cache.UserCache;
 import com.study.lab1.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
-@Service
+
+@Repository
 public class UserDao {
 
     @Autowired
