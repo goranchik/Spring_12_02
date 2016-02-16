@@ -1,5 +1,6 @@
 package com.study.lab1;
 
+import com.study.lab1.context.BankContext;
 import com.study.lab1.handler.RequestHandler;
 import com.study.lab1.model.Account;
 import com.study.lab1.model.Request;
@@ -9,12 +10,13 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:application-context.xml")
+@ContextConfiguration(classes = BankContext.class, loader = AnnotationConfigContextLoader.class)
 public class FlowTest {
 
     @Autowired
@@ -58,7 +60,7 @@ public class FlowTest {
 
     @Test
     public void testSuccessCounterbalanceRequest() {
-        RequestHandler requestHandler = new RequestHandler();
+
         AccountService accountService = requestHandler.getAccountService();
 
         // prepare

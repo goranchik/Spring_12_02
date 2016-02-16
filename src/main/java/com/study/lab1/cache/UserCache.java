@@ -1,23 +1,23 @@
 package com.study.lab1.cache;
 
-import com.study.lab1.dao.MockDataSource;
-import com.study.lab1.model.Account;
 import com.study.lab1.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
  * Created by dsk14 on 15.02.2016.
  */
 @Service
-public class UserCache {
+public class UserCache extends AbstractCache{
 
-    @Autowired
-    private MockDataSource dataSource;
+    private List<User> users;
 
-    private List<User> users = dataSource.getUsers();
+    @PostConstruct
+    public void update() {
+        users = dataSource.getUsers();
+    }
 
     public User getUser(long id) {
         for (User user : users) {

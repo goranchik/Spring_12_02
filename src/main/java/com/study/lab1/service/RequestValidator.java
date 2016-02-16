@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class RequestValidator {
 
     @Autowired
-    private UserDao userDao;// = new UserDao();
+    private UserDao userDao;
 
     public void validate(Request request) {
         long userId = request.getUserId();

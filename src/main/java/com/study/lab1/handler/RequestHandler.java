@@ -13,10 +13,10 @@ import org.springframework.stereotype.Service;
 public class RequestHandler {
 
     @Autowired
-    private AccountService accountService;// = new AccountService();
+    private AccountService accountService;
 
     @Autowired
-    private RequestValidator requestValidator;// = new RequestValidator();
+    private RequestValidator requestValidator;
 
     public void handle(Request request) {
         requestValidator.validate(request);

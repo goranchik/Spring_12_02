@@ -12,7 +12,7 @@ import java.util.Random;
 public class AccountService {
 
     @Autowired
-    private AccountDao accountDao;// = new AccountDao();
+    private AccountDao accountDao;
 
     public Account getAccount(long id) {
         return accountDao.get(id);

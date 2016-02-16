@@ -2,12 +2,14 @@ package com.study.lab1.dao;
 
 import com.study.lab1.model.Account;
 import com.study.lab1.model.User;
+import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class MockDataSource {
     private List<Account> accounts = new ArrayList<>();
     private List<User> users = new ArrayList<>();
