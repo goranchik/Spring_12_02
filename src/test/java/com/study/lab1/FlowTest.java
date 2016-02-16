@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = BankContext.class, loader = AnnotationConfigContextLoader.class)
+@ContextConfiguration(classes = BankContext.class)
 public class FlowTest {
 
     @Autowired
