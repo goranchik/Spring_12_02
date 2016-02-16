@@ -19,13 +19,13 @@ public class AccountDao {
         Account account = new Account();
 
         Account accountCopy = accountCache.getAccount(id);
-
-        account.setId(accountCopy.getId());
-        account.setBalance(accountCopy.getBalance());
-
-        if (account == null) {
+        if (accountCopy == null) {
             account = dataSource.getAccount(id);
+        } else {
+            account.setId(accountCopy.getId());
+            account.setBalance(accountCopy.getBalance());
         }
+
         System.out.println("Getting account took : " + (System.currentTimeMillis() - start));
         return account;
     }
